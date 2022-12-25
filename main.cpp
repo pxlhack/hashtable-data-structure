@@ -1,6 +1,14 @@
 #include <iostream>
 #include "lib/hash_table.h"
 
+//todo toString ccnode.h
+//todo clear cc_form.h
+//todo iterators
+//todo increase size after form changing
+//todo hashing test
+//todo complexity test
+//todo readme.md
+//todo menu
 int main() {
     HashTable<int> table;
     table.insert("ALPHA", 3);
