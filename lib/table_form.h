@@ -28,6 +28,8 @@ public:
 
     virtual string toString() = 0;
 
+
+
     bool isEmpty() {
         return this->size == 0;
     };

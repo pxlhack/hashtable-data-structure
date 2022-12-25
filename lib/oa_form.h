@@ -103,6 +103,10 @@ public:
         return sstr.str();
     }
 
+    OANode<T> **getNodes() {
+        return nodes;
+    }
+
 private:
     OANode<T> **nodes;
 

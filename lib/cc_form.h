@@ -119,6 +119,10 @@ public:
         return sstr.str();
     }
 
+    CCNode<T> **getNodes() {
+        return nodes;
+    }
+
 private:
     CCNode<T> **nodes;
 };
