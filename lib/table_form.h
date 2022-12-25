@@ -5,10 +5,15 @@
 
 using namespace std;
 
+#define DEFAULT_SIZE 16
+
 template<typename T>
 class TableForm {
 public:
-    TableForm() {}
+    TableForm(unsigned capacity = DEFAULT_SIZE) {
+        this->capacity = capacity;
+        this->size = 0;
+    }
 
     ~TableForm() {}
 
