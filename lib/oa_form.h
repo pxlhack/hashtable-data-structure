@@ -40,7 +40,7 @@ public:
                 pos = j;
             }
 
-            if (isBusy(j) && this->arr[j]->getKey() == k) {
+            if (isBusy(j) && this->nodes[j]->getKey() == k) {
                 return false;
             }
 
@@ -56,9 +56,9 @@ public:
         }
 
         this->nodesCounter++;
-        this->arr[pos]->setKey(k);
-        this->arr[pos]->setValue(data);
-        this->arr[pos]->setBusy();
+        this->nodes[pos]->setKey(k);
+        this->nodes[pos]->setData(data);
+        this->nodes[pos]->setBusy();
         this->size++;
         return true;
     }
@@ -66,7 +66,7 @@ public:
     bool remove(string k) override {
         unsigned index = getIndex(k);
         if (index != -1) {
-            this->arr[index]->setDeleted();
+            this->nodes[index]->setDeleted();
             this->size--;
             return true;
         }
@@ -77,16 +77,16 @@ public:
     T get(string k) override {
         unsigned index = getIndex(k);
         if (index != -1) {
-            return this->arr[index]->getValue();
+            return this->nodes[index]->getData();
         }
 
         throw "not found!";
     }
 
     void clear() override {
-        for (OANode<T> *node: nodes) {
-            if (node->isBusy()) {
-                node->setDeleted();
+        for (int i = 0; i < this->capacity; ++i) {
+            if (isBusy(i)) {
+                this->nodes[i]->setDeleted();
             }
         }
     }
@@ -97,7 +97,7 @@ public:
             string stringView = "[";
             stringView += std::to_string(i);
             stringView += "] ";
-            stringView += this->arr[i]->toString();
+            stringView += this->nodes[i]->toString();
             sstr << stringView << endl;
         }
         return sstr.str();
@@ -124,18 +124,18 @@ private:
 
     unsigned getIndex(string k) {
         int i = 0;
-        int j = -1;
+        int j;
         this->nodesCounter = 0;
         do {
             this->nodesCounter++;
             j = hashFunction(k, i);
-            if (isBusy(j) && this->arr[j]->getKey() == k) {
-                break;
+            if (isBusy(j) && this->nodes[j]->getKey() == k) {
+                return j;
             }
             i++;
         } while (i != this->capacity || !isFree(j));
 
-        return j;
+        return -1;
     }
 
 };

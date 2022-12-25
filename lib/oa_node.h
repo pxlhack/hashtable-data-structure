@@ -12,6 +12,7 @@ enum states {
 template<typename T>
 class OANode : public Node<T> {
 
+public:
     OANode() {
         state = states::FREE;
     }
@@ -40,7 +41,7 @@ class OANode : public Node<T> {
         string states[] = {"FREE", "BUSY", "DELETED"};
         string stringView = "(" + states[state] + ") ";
         if (isBusy()) {
-            stringView += "Key: " + this->key + " " + "Data: " + to_string(this->value);
+            stringView += "Key: " + this->key + " " + "Data: " + to_string(this->data);
         }
         return stringView;
     }

@@ -6,12 +6,11 @@
 
 using namespace std;
 
-#define DEFAULT_SIZE 16
 
 template<typename T>
 class TableForm {
 public:
-    TableForm(unsigned capacity = DEFAULT_SIZE) {
+    TableForm(unsigned capacity) {
         this->capacity = capacity;
         this->size = 0;
     }
