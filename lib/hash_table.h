@@ -3,14 +3,20 @@
 
 #include "table_form.h"
 #include "oa_form.h"
+#include "cc_form.h"
 
 #define DEFAULT_SIZE 16
 
 template<typename T>
 class HashTable {
 public:
-    HashTable(int capacity = DEFAULT_SIZE) {
-        table = new OAForm<T>(capacity);
+    HashTable(int capacity = DEFAULT_SIZE, bool ccform = true) {
+        if (ccform) {
+            table = new CCForm<T>(capacity);
+        } else {
+            table = new OAForm<T>(capacity);
+
+        }
     }
 
     bool insert(string k, T data) {

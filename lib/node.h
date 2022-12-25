@@ -24,9 +24,6 @@ public:
         this->data = data;
     }
 
-    virtual string toString() = 0;
-
-
 protected:
     string key;
     T data;

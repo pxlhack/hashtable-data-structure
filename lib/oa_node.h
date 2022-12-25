@@ -37,7 +37,7 @@ public:
         return state == states::DELETED;
     }
 
-    string toString() override {
+    string toString() {
         string states[] = {"FREE", "BUSY", "DELETED"};
         string stringView = "(" + states[state] + ") ";
         if (isBusy()) {
