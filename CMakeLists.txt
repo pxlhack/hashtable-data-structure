@@ -3,4 +3,6 @@ project(hashtable2)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(hashtable2 main.cpp)
+add_executable(hashtable
+        main.cpp
+        lib/table_form.h)
