@@ -7,7 +7,8 @@ int main() {
     table.insert("ALPHA", 3);
     table.insert("BETA", 3);
     table.insert("GAMMA", 3);
-
+    table.print();
+    table.remove("ALPHA");
     table.print();
 
     return 0;

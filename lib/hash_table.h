@@ -18,7 +18,7 @@ public:
     }
 
     bool remove(string k) {
-        return table->Remove(k);
+        return table->remove(k);
     }
 
     T get(string k) {
@@ -26,7 +26,7 @@ public:
     }
 
     bool isEmpty() {
-        return table->IsEmpty();
+        return table->isEmpty();
     }
 
     int getSize() {
