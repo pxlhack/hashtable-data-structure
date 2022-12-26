@@ -87,7 +87,6 @@ public:
     }
 
 
-
 private:
     TableForm<T> *table;
 };

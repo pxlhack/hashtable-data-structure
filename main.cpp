@@ -8,9 +8,10 @@
 //todo complexity test
 //todo readme.md
 //todo menu
-//todo clear cc_form.h
 
+//todo clear cc_form.h
 //todo toString ccnode.h
+
 int main() {
     HashTable<int> table;
     table.insert("ALPHA", 3);

@@ -99,7 +99,16 @@ public:
     }
 
     void clear() override {
-
+        for (int i = 0; i < this->capacity; i++) {
+            CCNode<T> *t = this->nodes[i];
+            while (t != nullptr) {
+                CCNode<T> *tmp = t->getNext();
+                delete t;
+                this->size--;
+                t = tmp;
+            }
+            this->nodes[i] = nullptr;
+        }
     }
 
     string toString() override {
