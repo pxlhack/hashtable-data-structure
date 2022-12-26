@@ -149,7 +149,6 @@ void testMenu() {
                     break;
                 }
 
-
                 case 3: {
                     if (ht != nullptr) {
                         ht->toCollisionsChain();
@@ -161,7 +160,6 @@ void testMenu() {
                     break;
                 }
 
-
                 case 4: {
                     if (ht != nullptr) {
                         ht->toOpenAddressing();
@@ -172,7 +170,6 @@ void testMenu() {
                     cout << "~~ HashTable is nullptr ~~\n";
                     break;
                 }
-
 
                 case 5: {
                     if (ht != nullptr) {
@@ -206,7 +203,6 @@ void testMenu() {
                     break;
                 }
 
-
                 case 6: {
 
                     if (ht != nullptr) {
@@ -232,7 +228,6 @@ void testMenu() {
                     break;
                 }
 
-
                 case 7: {
                     if (ht != nullptr) {
                         ht->print();
@@ -242,7 +237,6 @@ void testMenu() {
 
                     break;
                 }
-
 
                 case 8: {
                     if (ht != nullptr) {
@@ -254,7 +248,6 @@ void testMenu() {
                     break;
                 }
 
-
                 case 9: {
                     if (ht != nullptr) {
                         cout << "~~ Capacity: " << ht->getCapacity() << " ~~\n";
@@ -263,7 +256,6 @@ void testMenu() {
                     }
                     break;
                 }
-
 
                 case 10: {
                     if (ht != nullptr) {
@@ -278,7 +270,6 @@ void testMenu() {
 
                     break;
                 }
-
 
                 case 11: {
 
@@ -305,16 +296,15 @@ void testMenu() {
                     break;
                 }
 
-
                 case 12: {
-
-                    if (ht != nullptr)
+                    if (ht != nullptr) {
                         ht->clear();
-                    else
+                    } else {
                         cout << "~~ HashTable is nullptr ~~\n";
+                    }
 
-                }
                     break;
+                }
 
                     //ITERATOR
                 case 13: {
@@ -393,8 +383,13 @@ void testMenu() {
                     } while (isIteratorsWorked);
                     break;
                 }
-                case 14: {
                     //COUNT
+                case 14: {
+                    if (ht == nullptr) {
+                        cout << "-- Table not created --\n\n";
+                        break;
+                    }
+                    cout << ht->getNodesNumber() << endl;
                     break;
                 }
 
@@ -402,9 +397,11 @@ void testMenu() {
                     isWorked = false;
                     break;
                 }
-                default:
+
+                default: {
                     cout << "!!! unknown command: " << command << " !!!" << endl;
                     break;
+                }
             }
 
         }

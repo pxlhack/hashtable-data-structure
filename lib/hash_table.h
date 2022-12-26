@@ -212,6 +212,12 @@ public:
     }
 
 
+    unsigned getNodesNumber() {
+        return table->getNodesNumber()
+
+        ;
+    }
+
 private:
     TableForm<T> *table;
 };
