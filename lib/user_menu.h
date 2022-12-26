@@ -200,10 +200,12 @@ void testMenu() {
                         } else {
                             cout << "~~ Value is not inserted to table ~~\n";
                         }
-                    } else
+                    } else {
                         cout << "~~ HashTable is nullptr ~~\n";
-                }
+                    }
                     break;
+                }
+
 
                 case 6: {
 
@@ -227,53 +229,56 @@ void testMenu() {
                     } else {
                         cout << "~~ HashTable is nullptr ~~\n";
                     }
-
-                }
                     break;
+                }
+
 
                 case 7: {
-
                     if (ht != nullptr) {
                         ht->print();
                     } else {
                         cout << "~~ HashTable is nullptr ~~\n";
                     }
 
-                }
                     break;
+                }
+
 
                 case 8: {
-
-                    if (ht != nullptr)
+                    if (ht != nullptr) {
                         cout << "~~ Size: " << ht->getSize() << " ~~\n";
-                    else
+                    } else {
                         cout << "~~ HashTable is nullptr ~~\n";
+                    }
 
-                }
                     break;
+                }
+
 
                 case 9: {
-
-                    if (ht != nullptr)
+                    if (ht != nullptr) {
                         cout << "~~ Capacity: " << ht->getCapacity() << " ~~\n";
-                    else
+                    } else {
                         cout << "~~ HashTable is nullptr ~~\n";
-
-                }
+                    }
                     break;
+                }
+
 
                 case 10: {
-
                     if (ht != nullptr) {
-                        if (ht->isEmpty())
+                        if (ht->isEmpty()) {
                             cout << "~~ HashTable is empty ~~\n";
-                        else
+                        } else {
                             cout << "~~ HashTable is not empty ~~\n";
-                    } else
+                        }
+                    } else {
                         cout << "~~ HashTable is nullptr ~~\n";
+                    }
 
-                }
                     break;
+                }
+
 
                 case 11: {
 
@@ -285,18 +290,21 @@ void testMenu() {
                             cout << "Enter key:\n>";
                             cin >> k;
 
-                            if (!isUpperCase(k))
+                            if (!isUpperCase(k)) {
                                 cout << "~~ Error, use only upper case char ~~\n";
+                            }
 
                         } while (!isUpperCase(k));
 
                         cout << "~~ Value: " << ht->get(k) << ", by key: " << k << " ~~\n";
 
-                    } else
+                    } else {
                         cout << "~~ HashTable is nullptr ~~\n";
+                    }
 
-                }
                     break;
+                }
+
 
                 case 12: {
 
@@ -385,17 +393,15 @@ void testMenu() {
                     } while (isIteratorsWorked);
                     break;
                 }
-                    break;
-
                 case 14: {
                     //COUNT
-                }
                     break;
+                }
 
                 case 0: {
                     isWorked = false;
-                }
                     break;
+                }
                 default:
                     cout << "!!! unknown command: " << command << " !!!" << endl;
                     break;
