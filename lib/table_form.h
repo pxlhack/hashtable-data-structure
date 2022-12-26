@@ -4,6 +4,7 @@
 #include <string>
 #include <cmath>
 #include <sstream>
+#include "node.h"
 
 using namespace std;
 
@@ -27,7 +28,6 @@ public:
     virtual void clear() = 0;
 
     virtual string toString() = 0;
-
 
 
     bool isEmpty() {
@@ -58,6 +58,8 @@ public:
         X = X - (unsigned) X;
         return (unsigned) (X * this->capacity);
     }
+
+    virtual Node<T> **getNodes() = 0;
 
 protected:
     unsigned size;

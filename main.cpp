@@ -13,21 +13,19 @@
 //todo toString ccnode.h
 
 int main() {
-    HashTable<int> table;
+    HashTable<int> table(16, false);
     table.insert("ALPHA", 3);
     table.insert("BETA", 3);
     table.insert("GAMMA", 3);
     table.print();
-    table.toOpenAddressing();
-    table.print();
     table.toCollisionsChain();
     table.print();
-    table.toOpenAddressing();
-    table.print();
 
-//    auto it = table.begin();
-//    while (it != table.end()) {
-//        cout << *it << endl;
-//    }
+    auto it = table.begin();
+    while (it != table.end()) {
+        cout << (*it).toString() << endl;
+        ++it;
+    }
+
     return 0;
 }

@@ -103,8 +103,12 @@ public:
         return sstr.str();
     }
 
-    OANode<T> **getNodes() {
-        return nodes;
+//    OANode<T> **getNodes() {
+//        return nodes;
+//    }
+
+    Node<T> **getNodes() {
+         return reinterpret_cast<Node<T> **>(nodes);
     }
 
 private:

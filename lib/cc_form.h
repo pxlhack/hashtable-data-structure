@@ -128,8 +128,12 @@ public:
         return sstr.str();
     }
 
-    CCNode<T> **getNodes() {
-        return nodes;
+//    CCNode<T> **getNodes() {
+//        return nodes;
+//    }
+
+    Node<T> **getNodes() {
+        return reinterpret_cast<Node<T> **>(nodes);
     }
 
 private:
