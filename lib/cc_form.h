@@ -25,6 +25,7 @@ public:
     }
 
     bool insert(string k, T data) override {
+        this->nodesCounter = 0;
         int j = this->hornerFunction(k);
         if (this->nodes[j] == nullptr) {
             this->nodesCounter++;
@@ -33,6 +34,7 @@ public:
             this->nodes[j]->setKey(k);
         } else {
             CCNode<T> *p = this->nodes[j];
+            this->nodesCounter++;
             if (p->getKey() == k) {
                 return false;
             }
@@ -53,11 +55,12 @@ public:
     }
 
     bool remove(string k) override {
+        this->nodesCounter = 0;
 
         int j = this->hornerFunction(k);
 
         CCNode<T> *p = this->nodes[j];
-
+        this->nodesCounter++;
         if (p == nullptr) {
             return false;
         }
@@ -85,9 +88,11 @@ public:
     }
 
     T get(string k) override {
+        this->nodesCounter = 0;
         int j = this->hornerFunction(k);
         CCNode<T> *t = this->nodes[j];
         while (t != nullptr) {
+            this->nodesCounter++;
             if (t->getKey() == k) {
                 break;
             }

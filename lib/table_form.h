@@ -15,6 +15,7 @@ public:
     TableForm(unsigned capacity) {
         this->capacity = capacity;
         this->size = 0;
+        this->nodesCounter = 0;
     }
 
     ~TableForm() {}

@@ -13,3 +13,15 @@ add_executable(hashtable
         lib/hash_table.h
         lib/cc_form.h
         lib/user_menu.h)
+
+
+add_executable(test
+        lib/table_form.h
+        lib/node.h
+        lib/oa_node.h
+        lib/cc_node.h
+        lib/oa_form.h
+        lib/hash_table.h
+        lib/cc_form.h
+        lib/user_menu.h
+        performance_test.cpp)

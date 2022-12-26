@@ -1,6 +1,7 @@
 #ifndef HASHTABLE2_HASH_TABLE_H
 #define HASHTABLE2_HASH_TABLE_H
 
+#include <iostream>
 #include "table_form.h"
 #include "oa_form.h"
 #include "cc_form.h"
@@ -213,9 +214,7 @@ public:
 
 
     unsigned getNodesNumber() {
-        return table->getNodesNumber()
-
-        ;
+        return table->getNodesNumber();
     }
 
 private:
