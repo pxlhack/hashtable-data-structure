@@ -18,6 +18,8 @@ public:
         this->next = node;
     }
 
+
+
 private:
     CCNode *next;
 };

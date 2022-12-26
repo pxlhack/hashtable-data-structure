@@ -41,7 +41,7 @@ public:
         string states[] = {"FREE", "BUSY", "DELETED"};
         string stringView = "(" + states[state] + ") ";
         if (isBusy()) {
-            stringView += "Key: " + this->key + " " + "Data: " + to_string(this->data);
+            stringView += Node<T>::toString();
         }
         return stringView;
     }

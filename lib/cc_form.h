@@ -106,10 +106,10 @@ public:
         stringstream sstr;
         for (int i = 0; i < this->capacity; i++) {
             if (this->nodes[i] != nullptr) {
-                sstr << i << " - " << this->nodes[i]->getKey();
+                sstr << i << " - " << this->nodes[i]->toString();
                 CCNode<T> *t = this->nodes[i]->getNext();
                 while (t != nullptr) {
-                    sstr << ", " << t->getKey();
+                    sstr << ", " << t->toString();
                     t = t->getNext();
                 }
                 sstr << "\n";

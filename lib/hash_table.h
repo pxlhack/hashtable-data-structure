@@ -55,37 +55,37 @@ public:
         return dynamic_cast<CCForm<T> *>(table);
     }
 
-
     void toCollisionsChain() {
-        OAForm<T> *oatable = (OAForm<T> *) table;
-        OANode<T> **nodes = oatable->getNodes();
-        CCForm<T> *cltable = new CCForm<T>(getCapacity());
+        OAForm<T> *pOaForm = (OAForm<T> *) table;
+        OANode<T> **nodes = pOaForm->getNodes();
+        CCForm<T> *pCcForm = new CCForm<T>(getCapacity());
         for (int i = 0; i < getCapacity(); i++) {
             if (nodes[i]->isBusy()) {
-                cltable->insert(nodes[i]->getKey(), nodes[i]->getData());
+                pCcForm->insert(nodes[i]->getKey(), nodes[i]->getData());
             }
         }
-        table = cltable;
-        delete oatable;
+        table = pCcForm;
+        delete pOaForm;
     }
 
     void toOpenAddressing() {
-        CCForm<T> *cltable = (CCForm<T> *) table;
-        CCNode<T> **nodes = cltable->getNodes();
-        OAForm<T> *oatable = new OAForm<T>(getCapacity());
+        CCForm<T> *pCcForm = (CCForm<T> *) table;
+        CCNode<T> **nodes = pCcForm->getNodes();
+        OAForm<T> *pOaForm = new OAForm<T>(getCapacity());
         for (int i = 0; i < getCapacity(); i++) {
             if (nodes[i] != nullptr) {
-                oatable->insert(nodes[i]->getKey(), nodes[i]->getData());
+                pOaForm->insert(nodes[i]->getKey(), nodes[i]->getData());
                 CCNode<T> *t = nodes[i]->getNext();
                 while (t != nullptr) {
-                    oatable->insert(t->getKey(), t->getData());
+                    pOaForm->insert(t->getKey(), t->getData());
                     t = t->getNext();
                 }
             }
         }
-        table = oatable;
-        delete cltable;
+        table = pOaForm;
+        delete pCcForm;
     }
+
 
 
 private:

@@ -24,6 +24,11 @@ public:
         this->data = data;
     }
 
+    string toString() {
+        return "Key: " + this->key + "; Data: " + to_string(this->data);
+    };
+
+
 protected:
     string key;
     T data;
